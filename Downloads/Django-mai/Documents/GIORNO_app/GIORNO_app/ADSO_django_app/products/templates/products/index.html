@@ -1,0 +1,25 @@
+{% if products_list %}
+    <h2>Our Great Products List:</h2>
+    <ul>
+    {% for product in products_list %}
+        <li>
+            <a href="/products/{{ product.id }}/">{{ product.id }}</a>
+        </li>
+        <li>
+            <strong>Name: </strong>{{ product.product_name }}
+        </li>
+        <li>
+            <strong>Price: </strong>{{ product.price }}
+        </li>
+        <li>
+            <strong>Category: </strong>{{ product.type }}
+        </li>
+        <li>
+            <strong>Stock: </strong>{{ product.product_stock }}
+        </li>
+        <br>
+    {% end for %}
+    </ul>
+{% else %}
+    <p>No products available.</p>
+{% endif %}
